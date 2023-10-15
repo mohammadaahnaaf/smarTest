@@ -1,18 +1,31 @@
-import Image from 'next/image'
-import Link from 'next/link'
 import React from 'react'
+import Link from 'next/link'
 
 type Props = {}
 
 export const Header = (props: Props) => {
   const [expand, setExpand] = React.useState(false)
+  const navItems = [
+    {
+      title: 'About',
+      link: '#'
+    },
+    {
+      title: 'API',
+      link: '#'
+    },
+    {
+      title: 'Features',
+      link: '#'
+    },
+  ]
 
   return (
     <header className="py-4 bg-black sm:py-6" x-data="{expanded: false}">
       <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           <div className="shrink-0">
-            <Link href="/" className="flex text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-purple-500">
+            <Link href="/" className="flex font-bold text-xl text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-purple-500">
               SmarTest
             </Link>
           </div>
@@ -34,19 +47,17 @@ export const Header = (props: Props) => {
           </div>
 
           <nav className="hidden md:flex md:items-center md:justify-end md:space-x-12">
-            <Link href="#" title="" className="text-base font-normal text-gray-400 transition-all duration-200 hover:text-white"> Products </Link>
-            <Link href="#" title="" className="text-base font-normal text-gray-400 transition-all duration-200 hover:text-white"> Features </Link>
-            <Link href="#" title="" className="text-base font-normal text-gray-400 transition-all duration-200 hover:text-white"> Pricing </Link>
-            <Link href="#" title="" className="text-base font-normal text-gray-400 transition-all duration-200 hover:text-white"> Support </Link>
+            {navItems.map((x, index) => (
+              <Link key={index} href="#" title="" className="text-base font-normal text-gray-400 transition-all duration-200 hover:text-white"> {x.title} </Link>
+            ))}
           </nav>
         </div>
 
         <nav className={expand ? `block` : `hidden`} x-collapse>
           <div className="flex flex-col pt-8 pb-4 space-y-6">
-            <Link href="#" title="" className="text-base font-normal text-gray-400 transition-all duration-200 hover:text-white"> Products </Link>
-            <Link href="#" title="" className="text-base font-normal text-gray-400 transition-all duration-200 hover:text-white"> Features </Link>
-            <Link href="#" title="" className="text-base font-normal text-gray-400 transition-all duration-200 hover:text-white"> Pricing </Link>
-            <Link href="#" title="" className="text-base font-normal text-gray-400 transition-all duration-200 hover:text-white"> Support </Link>
+            {navItems.map((x, index) => (
+              <Link key={index} href="#" title="" className="text-base font-normal text-gray-400 transition-all duration-200 hover:text-white"> {x.title} </Link>
+            ))}
           </div>
         </nav>
       </div>
