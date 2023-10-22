@@ -10,7 +10,7 @@ export default function HomePage() {
       <Head>
         <title>SmarTest | Home</title>
       </Head>
-      <div className={`grid bg-white dark:bg-black min-h-screen ${inter.className}`}>
+      <div className={`grid bg-black min-h-screen ${inter.className}`}>
         <Main />
         {/* <Home /> */}
       </div>
