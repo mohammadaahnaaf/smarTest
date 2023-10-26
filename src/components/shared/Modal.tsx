@@ -27,7 +27,7 @@ export const Modal = (props: Props) => {
           leaveFrom="opacity-100"
           leaveTo="opacity-0"
         >
-          <div className="fixed inset-0 bg-black bg-opacity-25" />
+          <div className="fixed inset-0 bg-black bg-opacity-40" />
         </Transition.Child>
 
         <div className="fixed inset-0 overflow-y-auto">
@@ -44,7 +44,7 @@ export const Modal = (props: Props) => {
               <Dialog.Panel className="w-full max-w-2xl transform overflow-hidden rounded-2xl bg-black bg-opacity-80 backdrop-blur-md ring-2 ring-rose-600 p-6 text-left align-middle shadow-xl transition-all">
                 <Dialog.Title
                   as="h3"
-                  className="text-4xl text-center font-semibold leading-6 text-purple-300"
+                  className="text-4xl text-center leading-6 text-white"
                 >
                   Are You Smart?
                 </Dialog.Title>
